@@ -1,0 +1,319 @@
+@font-face {
+    font-family: nav-subheading;
+    src: url('Karma-Bold.ttf');
+}
+
+@font-face {
+    font-family: body-text;
+    src: url('Chivo-Regular.ttf');
+}
+
+@font-face {
+    font-family: heading;
+    src: url('PetitFormalScript-Regular.ttf');
+}
+
+
+:root {
+    --dark-color: rgb(31, 36, 52);
+    --light-color: rgb(225, 224, 229);
+    --font-ratio: 1.2;
+    --main-heading: calc(2rem * var(--font-ratio));
+    --secondary-heading: calc(1.5rem * var(--font-ratio));
+    --sub-heading: calc(1.25rem * var(--font-ratio));
+    --nav-text: calc(1rem * var(--font-ratio));
+    --body-text: calc(1rem * var(--font-ratio));
+    --nav: "nav-subheading"; 
+    --body: "body-text";
+    --heading:"heading";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: var(--main-heading);
+    font-family: var(--heading);
+}
+
+h2 {
+    font-size: var(--secondary-heading);
+    font-family: var(--nav);
+    text-align: center;
+}
+
+h3 {
+    font-size: var(--sub-heading);
+    font-family: var(--nav);
+}
+
+p {
+    font-size: var(--body-text);
+    font-family: var(--body);
+    text-align: justify;
+}
+
+nav {
+    background-color: var(--dark-color);
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    font-family: var(--nav);
+    font-size: var(--nav-text);
+}
+nav a {
+   text-decoration: none;
+   color:var(--light-color);
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+#menu {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+}
+#menu-toggle {
+    display: none;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    border: none;
+}
+#menu.active {
+    display: flex;
+}
+
+.hero {
+    background-image: url(../images/hero1.jpg);
+    background-size: cover;
+}
+
+.product-hero {
+    background-image: url(../images/hero2.jpg);
+    background-size: cover;
+}
+
+.about-hero {
+    background-image: url(../images/hero3.jpg);
+    background-size: cover;
+}
+
+.hero-content{
+    min-height: 38rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.hero h1{
+    top: 10px;
+}
+
+.product-gallery-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(auto, 12.5rem);
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+.product-grid{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin-left: 300px;
+    align-items: center;
+}
+
+.product-grid img{
+    width: 50%;
+    height: 50%;
+    padding: 10px;
+}
+
+.description p{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid h2{
+    border: 2px solid rgb(31, 36, 52);;
+    width: 50%;
+    align-items: center;
+    background-color: rgb(31, 36, 52);
+    color: white;
+}
+
+.product-gallery-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: solid rgb(255, 255, 255) 0.625rem;
+    box-sizing: border-box;
+}
+
+footer{
+    background-color: var(--dark-color);
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+footer p{
+    color: var(--light-color);
+    text-align: center;
+}
+
+/* laptop, small screen media  -  1024px or less */
+/* max-width: 1024px is the same as saying 
+if width is less than 1024px, run this css */
+@media screen and (max-width: 64em) {
+    :root{
+        --font-ratio: 1.2;
+        --main-heading: calc(1.5rem * var(--font-ratio));
+        --secondary-heading: calc(1.5rem * var(--font-ratio));
+        --sub-heading: calc(1.25rem * var(--font-ratio));
+        --nav-text: calc(1rem * var(--font-ratio));
+        --body-text: calc(1rem * var(--font-ratio));
+    }
+
+    .hero {
+        background-size: cover;
+        background-repeat: no-repeat;
+        justify-content: start;
+        min-height: 35rem;
+    }
+
+    .product-hero {
+        background-size: cover;
+        background-repeat: no-repeat;
+        justify-content: start;
+        min-height: 35rem;
+    }
+
+    .product-grid{
+        margin-left: 130px;
+        width: 80%;
+    }
+
+    .product-grid img{
+        width: 50%;
+        height: 50%;
+        padding: 10px;
+    }
+
+    .about{
+        width: 50rem;
+        margin: -30px auto;
+    }
+    
+}
+
+/* ipad, tablets media  -  768px or less */
+/* max-width: 768px is the same as saying 
+if width is less than 768px, run this css */
+@media screen and (max-width: 48em) {
+    :root{
+        --font-ratio: 1.0;
+        --main-heading: calc(1.2rem * var(--font-ratio));
+        --secondary-heading: calc(1.5rem * var(--font-ratio));
+        --sub-heading: calc(1.25rem * var(--font-ratio));
+        --nav-text: calc(1rem * var(--font-ratio));
+        --body-text: calc(1rem * var(--font-ratio));
+    }
+
+    .hero {
+        background-size: cover;
+        background-repeat: no-repeat;
+        justify-content: start;
+        min-height: 30rem;
+    }
+
+    .product-hero {
+        background-size: cover;
+        background-repeat: no-repeat;
+        justify-content: start;
+        min-height: 30rem;
+    }
+
+    .product-gallery-images {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .product-grid{
+        margin-left: 100px;
+        width: 80%;
+    }
+
+    .product-grid img{
+        width: 50%;
+        height: 50%;
+        padding: 10px;
+    }
+    
+}
+
+/* mobile media  -  480px or less */
+/* max-width: 480px is the same as saying 
+if width is less than 480px, run this css */
+@media screen and (max-width: 30em) {
+
+    :root{
+        --font-ratio: 0.5;
+        --main-heading: calc(2rem * var(--font-ratio));
+        --secondary-heading: calc(1.8rem * var(--font-ratio));
+        --sub-heading: calc(1.25rem * var(--font-ratio));
+        --nav-text: calc(1rem * var(--font-ratio));
+        --body-text: calc(1.5rem * var(--font-ratio));
+    }
+
+    p {
+        font-size: var(--body-text);
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+    #menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 10px;
+        right: 0px;
+        background-color: var(--dark-color);
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    .hero{
+        background-size: contain;
+        min-height: 18rem;
+        margin-bottom: -10px;
+    }
+    .hero-content {
+        min-height: 18rem;
+    }
+
+    .product-gallery-images {
+        grid-template-columns: 1fr;
+    }
+
+    .product-grid{
+        flex-direction: column;
+    }
+
+}
+
+
